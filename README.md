@@ -32,7 +32,7 @@ Para completar este ejercicio de prueba de Laravel, sigue los siguientes pasos:
 
 ## Creación del servicio para consultar la API
 
-1. Crea un servicio que consulte la siguiente API: `https://api.publicapis.org/entries`.
+1. Crea un servicio que consulte la siguiente API: `https://api.publicapis.org/entries`. **En caso de que la API esté caída, utiliza el archivo `entries.json` adjunto al repositorio**.
 2. Extrae las entidades de las categorías "Animals" y "Security" de la respuesta obtenida.
 3. Inserta las entidades obtenidas en la tabla de entidades en la base de datos.
 4. Utiliza controladores, migraciones, recursos (resources), etc., según consideres necesario.

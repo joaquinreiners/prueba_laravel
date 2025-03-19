@@ -11,7 +11,7 @@ class ApiService
     {
         try {
 
-            $response = Http::get('https://api.publicapis.org/entries');
+            $response = Http::get('https://web.archive.org/web/20240403172734/https://api.publicapis.org/entries');
                 return $response->json()['entries'];
 
         } catch (\Exception $e) {

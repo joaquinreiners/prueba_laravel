@@ -1,5 +1,4 @@
 <?php
-
 namespace Tests\Unit;
 
 use Tests\TestCase;
@@ -11,6 +10,7 @@ class EntityTest extends TestCase
 {
     use RefreshDatabase;
 
+    /** @test */
     public function an_entity_can_be_created()
     {
         $category = Category::create(['name' => 'Animals']);
@@ -26,6 +26,7 @@ class EntityTest extends TestCase
         $this->assertEquals('Test API', $entity->api);
     }
 
+    /** @test */
     public function an_entity_requires_a_category_id()
     {
         $this->expectException(\Illuminate\Database\QueryException::class);
@@ -37,4 +38,3 @@ class EntityTest extends TestCase
         ]);
     }
 }
-

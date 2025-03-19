@@ -1,5 +1,4 @@
 <?php
-
 namespace Tests\Feature;
 
 use Tests\TestCase;
@@ -11,10 +10,11 @@ class ApiServiceTest extends TestCase
 {
     use RefreshDatabase;
 
+    /** @test */
     public function it_fetches_entries_from_api()
     {
         Http::fake([
-            'https://api.publicapis.org/entries' => Http::response([
+            'https://web.archive.org/web/20240403172734/https://api.publicapis.org/entries' => Http::response([
                 'entries' => [
                     ['API' => 'Test API', 'Category' => 'Animals'],
                     ['API' => 'Another API', 'Category' => 'Security'],
@@ -29,6 +29,7 @@ class ApiServiceTest extends TestCase
         $this->assertEquals('Test API', $entries[0]['API']);
     }
 
+    /** @test */
     public function it_uses_local_file_if_api_fails()
     {
         Http::fake([
@@ -49,4 +50,3 @@ class ApiServiceTest extends TestCase
         $this->assertEquals('Local API', $entries[0]['API']);
     }
 }
-

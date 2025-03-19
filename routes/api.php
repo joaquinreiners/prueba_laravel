@@ -18,4 +18,4 @@ use App\Http\Controllers\EntityController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/{category}', [EntityController::class, 'apiCategory']);
+Route::get('/{category}', [EntityController::class, 'apiCategory'])->name('category');

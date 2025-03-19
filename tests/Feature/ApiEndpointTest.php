@@ -11,6 +11,7 @@ class ApiEndpointTest extends TestCase
 {
     use RefreshDatabase;
 
+    /** @test */
     public function it_returns_entities_for_a_category()
     {
         $category = Category::create(['name' => 'Security']);
@@ -40,6 +41,7 @@ class ApiEndpointTest extends TestCase
             ]);
     }
 
+    /** @test */
     public function it_returns_404_for_unknown_category()
     {
         $response = $this->getJson('/api/UnknownCategory');
@@ -51,4 +53,3 @@ class ApiEndpointTest extends TestCase
             ]);
     }
 }
-

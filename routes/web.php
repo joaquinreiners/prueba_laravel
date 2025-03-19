@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('entities', [EntityController::class, 'index']);
+Route::get('entities', [EntityController::class, 'index'])->name('populate');

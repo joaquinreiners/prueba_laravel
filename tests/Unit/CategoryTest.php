@@ -1,5 +1,4 @@
 <?php
-
 namespace Tests\Unit;
 
 use Tests\TestCase;
@@ -10,6 +9,7 @@ class CategoryTest extends TestCase
 {
     use RefreshDatabase;
 
+    /** @test */
     public function a_category_can_be_created()
     {
         $category = Category::create(['name' => 'Security']);
@@ -18,6 +18,7 @@ class CategoryTest extends TestCase
         $this->assertEquals('Security', $category->name);
     }
 
+    /** @test */
     public function a_category_requires_a_name()
     {
         $this->expectException(\Illuminate\Database\QueryException::class);
@@ -25,4 +26,3 @@ class CategoryTest extends TestCase
         Category::create([]);
     }
 }
- 
